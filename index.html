@@ -104,6 +104,9 @@
       text-decoration: none;
       color: var(--brown-deep);
       min-width: max-content;
+      border-radius: 999px;
+      padding: 4px 10px 4px 4px;
+      background: rgba(255, 252, 247, 0.78);
     }
 
     .brand-logo {
@@ -111,6 +114,10 @@
       height: 52px;
       flex: 0 0 auto;
       object-fit: contain;
+      border: 1px solid rgba(201, 150, 44, 0.22);
+      border-radius: 999px;
+      background: #fbf6ef;
+      padding: 4px;
     }
 
     .brand-copy {
@@ -776,6 +783,119 @@
       margin: 0;
     }
 
+    .courses-mentoring {
+      position: relative;
+      overflow: hidden;
+      background:
+        radial-gradient(circle at 12% 0, rgba(201, 150, 44, 0.1), transparent 26%),
+        linear-gradient(180deg, var(--bg-soft) 0%, var(--white) 100%);
+    }
+
+    .courses-mentoring .container {
+      position: relative;
+      z-index: 1;
+    }
+
+    .courses-grid {
+      display: grid;
+      gap: 20px;
+      margin-top: 34px;
+    }
+
+    .course-card {
+      position: relative;
+      overflow: hidden;
+      border: 1px solid rgba(201, 150, 44, 0.2);
+      border-radius: 16px;
+      background: rgba(255, 255, 255, 0.88);
+      padding: 28px 24px;
+      box-shadow: 0 2px 16px rgba(58, 42, 30, 0.05);
+      transition: border-color 0.3s ease, transform 0.3s ease, box-shadow 0.3s ease;
+    }
+
+    .course-card::before {
+      content: "";
+      position: absolute;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 4px;
+      background: linear-gradient(90deg, var(--gold), rgba(201, 150, 44, 0.28));
+    }
+
+    .course-card:hover {
+      border-color: rgba(201, 150, 44, 0.45);
+      box-shadow: 0 14px 32px rgba(58, 42, 30, 0.08);
+      transform: translateY(-3px);
+    }
+
+    .course-card .card-icon {
+      margin-bottom: 18px;
+      background: rgba(255, 252, 247, 0.96);
+      box-shadow: 0 8px 18px rgba(58, 42, 30, 0.06);
+    }
+
+    .course-card h3 {
+      margin-bottom: 14px;
+      font-size: 25px;
+    }
+
+    .course-card p {
+      margin-bottom: 16px;
+      color: var(--brown-muted);
+      font-size: 14px;
+      line-height: 1.62;
+    }
+
+    .course-list {
+      display: grid;
+      gap: 10px;
+      margin: 0;
+      padding: 0;
+      list-style: none;
+    }
+
+    .course-list li {
+      display: flex;
+      align-items: flex-start;
+      gap: 9px;
+      color: var(--brown-muted);
+      font-size: 13.5px;
+      line-height: 1.45;
+    }
+
+    .course-list li::before {
+      content: "✦";
+      flex-shrink: 0;
+      margin-top: 2px;
+      color: var(--gold);
+      font-size: 10px;
+    }
+
+    .investment-list li {
+      color: var(--brown-deep);
+      font-weight: 600;
+    }
+
+    .courses-cta {
+      display: grid;
+      align-items: center;
+      gap: 18px;
+      margin-top: 34px;
+      border: 1px solid rgba(201, 150, 44, 0.25);
+      border-radius: 16px;
+      background: rgba(255, 255, 255, 0.82);
+      padding: 28px 24px;
+      box-shadow: var(--shadow);
+    }
+
+    .courses-cta p {
+      margin: 0;
+      color: var(--brown-muted);
+      font-size: 14.5px;
+      line-height: 1.6;
+    }
+
     .contact-copy p {
       margin-bottom: 26px;
       color: var(--brown-muted);
@@ -863,6 +983,10 @@
       justify-content: center;
       gap: 12px;
       margin-bottom: 14px;
+      border: 1px solid rgba(201, 150, 44, 0.24);
+      border-radius: 999px;
+      background: rgba(255, 252, 247, 0.08);
+      padding: 7px 16px 7px 8px;
     }
 
     .footer-logo {
@@ -870,6 +994,9 @@
       height: 48px;
       flex: 0 0 auto;
       object-fit: contain;
+      border-radius: 999px;
+      background: #fbf6ef;
+      padding: 4px;
     }
 
     .footer-copy {
@@ -1024,6 +1151,10 @@
       .services-grid {
         grid-template-columns: repeat(2, minmax(0, 1fr));
       }
+
+      .courses-grid {
+        grid-template-columns: repeat(2, minmax(0, 1fr));
+      }
     }
 
     @media (min-width: 1024px) {
@@ -1047,9 +1178,13 @@
       .services-grid {
         grid-template-columns: repeat(3, minmax(0, 1fr));
       }
+
+      .courses-grid {
+        grid-template-columns: repeat(3, minmax(0, 1fr));
+      }
     }
 
-    @media (max-width: 767px) {
+    @media (max-width: 920px) {
       .container {
         width: min(100% - 40px, 560px);
       }
@@ -1099,6 +1234,7 @@
       .hero-ctas .btn-primary,
       .hero-ctas .btn-secondary,
       .services-cta .btn-primary,
+      .courses-cta .btn-primary,
       .contact-copy .btn-primary {
         width: 100%;
       }
@@ -1144,7 +1280,13 @@
       }
     }
 
-    @media (min-width: 768px) {
+    @media (min-width: 768px) and (max-width: 920px) {
+      .container {
+        width: min(100% - 48px, 840px);
+      }
+    }
+
+    @media (min-width: 921px) {
       .nav-menu .mobile-cta {
         display: none;
       }
@@ -1170,7 +1312,7 @@
   <header class="site-header">
     <div class="container nav-bar">
       <a class="brand" href="#inicio" aria-label="Amanda Viana Estética Facial e Corporal">
-        <img class="brand-logo" src="logo-transparente.png" alt="" aria-hidden="true">
+        <img class="brand-logo" src="logo-nova-amanda-viana.png" alt="" aria-hidden="true">
         <span class="brand-copy">
           <span class="brand-name">Amanda Viana</span>
           <span class="brand-sub">Estética Facial e Corporal</span>
@@ -1182,6 +1324,7 @@
           <li><a class="active" href="#inicio">Início</a></li>
           <li><a href="#sobre">Sobre</a></li>
           <li><a href="#atendimentos">Atendimentos</a></li>
+          <li><a href="#cursos-mentoria">Cursos e Mentoria</a></li>
           <li><a href="#contato">Contato</a></li>
           <li><a class="btn-primary mobile-cta" href="https://wa.me/5521964222780?text=Ol%C3%A1%2C%20Amanda%21%20Vim%20pelo%20site%20e%20gostaria%20de%20agendar%20um%20atendimento.">Agendar WhatsApp</a></li>
         </ul>
@@ -1289,7 +1432,7 @@
                   <li>Limpeza de pele com extração de milium</li>
                   <li>Limpeza de pele para adolescentes</li>
                   <li>Limpeza de pele nas costas</li>
-                  <li>Microagulhamento Fotobiomodulação facial</li>
+                  <li>Microagulhamento Fotobiomodulado facial</li>
                 </ul>
               </div>
             </div>
@@ -1358,6 +1501,58 @@
         </div>
       </div>
     </section>
+
+    <section class="courses-mentoring" id="cursos-mentoria">
+      <div class="container">
+        <div class="section-heading center reveal">
+          <span class="section-label">Cursos e Mentoria</span>
+          <h2>Cursos e Mentoria</h2>
+          <p class="section-desc">Aprenda na prática com Amanda Viana e aperfeiçoe suas técnicas na estética.</p>
+        </div>
+
+        <div class="courses-grid">
+          <article class="course-card reveal">
+            <span class="card-icon"><svg width="30" height="30" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.4"><path d="M4 6.5 12 3l8 3.5-8 3.5L4 6.5Z"/><path d="M6.5 9.4v4.2c0 1.9 2.5 3.4 5.5 3.4s5.5-1.5 5.5-3.4V9.4"/><path d="M20 7v6"/></svg></span>
+            <h3>Cursos disponíveis</h3>
+            <ul class="course-list">
+              <li>Limpeza de Pele Premium</li>
+              <li>Massagem Modeladora</li>
+              <li>Drenagem Linfática</li>
+              <li>Tratamento completo para glúteos com eletroterapia</li>
+            </ul>
+          </article>
+
+          <article class="course-card reveal">
+            <span class="card-icon"><svg width="30" height="30" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.4"><path d="M12 14a5 5 0 1 0 0-10 5 5 0 0 0 0 10Z"/><path d="M4.5 21c.9-3.4 3.4-5.2 7.5-5.2s6.6 1.8 7.5 5.2"/><path d="m17 4 1.2-1.8L20 3.4"/></svg></span>
+            <h3>Mentoria VIP</h3>
+            <p>Aula exclusiva, totalmente prática e personalizada para você. São 3 horas de aula com atenção individual, para aperfeiçoar suas técnicas, tirar dúvidas e aprender o passo a passo do procedimento escolhido.</p>
+            <ul class="course-list">
+              <li>Aula totalmente prática</li>
+              <li>Apostila inclusa</li>
+              <li>Certificado de conclusão</li>
+              <li>Atendimento personalizado</li>
+              <li>Datas e horários flexíveis a combinar</li>
+            </ul>
+          </article>
+
+          <article class="course-card reveal">
+            <span class="card-icon"><svg width="30" height="30" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.4"><path d="M12 2v20"/><path d="M17 5.5H9.5a3.5 3.5 0 0 0 0 7H14a3.5 3.5 0 0 1 0 7H6.5"/></svg></span>
+            <h3>Investimento</h3>
+            <ul class="course-list investment-list">
+              <li>1 aluna: R$ 400,00</li>
+              <li>Você + 1 amiga: R$ 700,00 as duas</li>
+              <li>Você + 2 amigas: R$ 900,00 as três</li>
+            </ul>
+          </article>
+        </div>
+
+        <div class="courses-cta reveal">
+          <p>Escolha a técnica que deseja aperfeiçoar e solicite seu formulário de inscrição. Vagas limitadas.</p>
+          <a href="https://wa.me/5521964222780?text=Ol%C3%A1%2C%20Amanda%21%20Vim%20pelo%20site%20e%20quero%20saber%20mais%20sobre%20os%20cursos%20e%20mentorias" class="btn-primary">Quero saber mais pelo WhatsApp</a>
+        </div>
+      </div>
+    </section>
+
     <section class="contact" id="contato">
       <div class="container contact-grid">
         <div class="contact-copy reveal">
@@ -1399,7 +1594,7 @@
   <footer class="site-footer">
     <div class="container">
       <div class="footer-brand">
-        <img class="footer-logo" src="logo-transparente.png" alt="" aria-hidden="true">
+        <img class="footer-logo" src="logo-nova-amanda-viana.png" alt="" aria-hidden="true">
         <span class="footer-copy">
           <span class="footer-name">Amanda Viana</span>
           <span class="footer-sub">Estética Facial e Corporal</span>
