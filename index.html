@@ -99,10 +99,23 @@
 
     .brand {
       display: inline-flex;
-      flex-direction: column;
+      align-items: center;
+      gap: 12px;
       text-decoration: none;
       color: var(--brown-deep);
       min-width: max-content;
+    }
+
+    .brand-logo {
+      width: 52px;
+      height: 52px;
+      flex: 0 0 auto;
+      object-fit: contain;
+    }
+
+    .brand-copy {
+      display: inline-flex;
+      flex-direction: column;
     }
 
     .brand-name {
@@ -846,8 +859,23 @@
 
     .footer-brand {
       display: inline-flex;
-      flex-direction: column;
+      align-items: center;
+      justify-content: center;
+      gap: 12px;
       margin-bottom: 14px;
+    }
+
+    .footer-logo {
+      width: 48px;
+      height: 48px;
+      flex: 0 0 auto;
+      object-fit: contain;
+    }
+
+    .footer-copy {
+      display: inline-flex;
+      flex-direction: column;
+      align-items: flex-start;
     }
 
     .footer-name {
@@ -1092,6 +1120,28 @@
       .brand-sub {
         font-size: 9px;
       }
+
+      .brand {
+        gap: 10px;
+      }
+
+      .brand-logo {
+        width: 42px;
+        height: 42px;
+      }
+
+      .footer-logo {
+        width: 42px;
+        height: 42px;
+      }
+
+      .footer-name {
+        font-size: 24px;
+      }
+
+      .footer-sub {
+        font-size: 9px;
+      }
     }
 
     @media (min-width: 768px) {
@@ -1120,8 +1170,11 @@
   <header class="site-header">
     <div class="container nav-bar">
       <a class="brand" href="#inicio" aria-label="Amanda Viana Estética Facial e Corporal">
-        <span class="brand-name">Amanda Viana</span>
-        <span class="brand-sub">Estética Facial e Corporal</span>
+        <img class="brand-logo" src="favicon.svg" alt="" aria-hidden="true">
+        <span class="brand-copy">
+          <span class="brand-name">Amanda Viana</span>
+          <span class="brand-sub">Estética Facial e Corporal</span>
+        </span>
       </a>
 
       <nav aria-label="Menu principal">
@@ -1195,7 +1248,7 @@
         <div class="about-copy reveal">
           <span class="section-label">Sobre</span>
           <h2>Cuidado, confiança<br><em>e resultados</em></h2>
-          <p>Amanda Viana atua com estética facial e corporal, oferecendo atendimentos personalizados para quem busca cuidado, bem-estar e resultados com segurança. Especialista em drenagens, atende em Campo Grande com protocolos voltados para estética, recuperação pós-operatória e tratamentos corporais.</p>
+          <p>Amanda Viana atua com estética facial e corporal, oferecendo atendimentos personalizados para quem busca cuidado, bem-estar e resultados com segurança há mais de 10 anos como profissional. Especialista em drenagens, atende em Campo Grande com protocolos voltados para estética, recuperação pós-operatória e tratamentos corporais.</p>
           <ul class="feature-list">
             <li class="feature-item"><span class="icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M12 3l1.8 5.2L19 10l-5.2 1.8L12 17l-1.8-5.2L5 10l5.2-1.8L12 3Z"/></svg></span>Especialista em drenagens</li>
             <li class="feature-item"><span class="icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M12 13a4 4 0 1 0 0-8 4 4 0 0 0 0 8Z"/><path d="M5 21c.9-3.7 3.2-5.5 7-5.5s6.1 1.8 7 5.5"/></svg></span>Atendimento facial e corporal</li>
@@ -1236,8 +1289,7 @@
                   <li>Limpeza de pele com extração de milium</li>
                   <li>Limpeza de pele para adolescentes</li>
                   <li>Limpeza de pele nas costas</li>
-                  <li>Microagulhamento</li>
-                  <li>Fotobiomodulação</li>
+                  <li>Microagulhamento Fotobiomodulação facial</li>
                 </ul>
               </div>
             </div>
@@ -1263,8 +1315,7 @@
                   <li>Tratamento para lipedema</li>
                   <li>Massagem modeladora com corrente russa</li>
                   <li>Pump up com corrente russa</li>
-                  <li>Massagem modeladora com pump up</li>
-                  <li>Pernas e glúteos</li>
+                  <li>Massagem modeladora com pump up</li>                
                 </ul>
               </div>
             </div>
@@ -1348,8 +1399,11 @@
   <footer class="site-footer">
     <div class="container">
       <div class="footer-brand">
-        <span class="footer-name">Amanda Viana</span>
-        <span class="footer-sub">Estética Facial e Corporal</span>
+        <img class="footer-logo" src="favicon.svg" alt="" aria-hidden="true">
+        <span class="footer-copy">
+          <span class="footer-name">Amanda Viana</span>
+          <span class="footer-sub">Estética Facial e Corporal</span>
+        </span>
       </div>
       <p>Campo Grande, RJ</p>
       <a href="https://instagram.com/amandavianarj" target="_blank" rel="noopener">@amandavianarj</a>
