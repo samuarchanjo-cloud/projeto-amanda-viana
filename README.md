@@ -1,16 +1,33 @@
-# React + Vite
+# Amanda Viana Estética Facial e Corporal
 
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
+Site institucional one-page para Amanda Viana Estética Facial e Corporal, com foco em apresentação premium, atendimento por WhatsApp e navegação responsiva.
 
-Currently, two official plugins are available:
+## Tecnologias usadas
 
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react) uses [Oxc](https://oxc.rs)
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react-swc) uses [SWC](https://swc.rs/)
+- HTML5
+- CSS3 embutido
+- JavaScript embutido
+- Google Fonts: Playfair Display e Montserrat
+- SVGs inline para ícones
 
-## React Compiler
+## Estrutura de pastas
 
-The React Compiler is not enabled on this template because of its impact on dev & build performances. To add it, see [this documentation](https://react.dev/learn/react-compiler/installation).
+```text
+site-amanda-viana-estetica/
+├── index.html
+├── foto-profissional.png
+└── README.md
+```
 
-## Expanding the ESLint configuration
+## Como rodar localmente
 
-If you are developing a production application, we recommend using TypeScript with type-aware lint rules enabled. Check out the [TS template](https://github.com/vitejs/vite/tree/main/packages/create-vite/template-react-ts) for information on how to integrate TypeScript and [`typescript-eslint`](https://typescript-eslint.io) in your project.
+Abra o arquivo `index.html` diretamente no navegador.
+
+Também é possível servir a pasta localmente com:
+
+```powershell
+cd "C:\Users\Archanjo\Desktop\site-amanda-viana-estetica"
+python -m http.server 8080
+```
+
+Depois acesse `http://localhost:8080`.
