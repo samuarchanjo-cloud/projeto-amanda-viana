@@ -1,4 +1,4 @@
-<!DOCTYPE html>
+﻿<!DOCTYPE html>
 <html lang="pt-BR">
 <head>
   <meta charset="UTF-8">
@@ -619,6 +619,150 @@
       font-size: 14.5px;
     }
 
+    .services {
+      position: relative;
+      overflow: hidden;
+      background:
+        radial-gradient(circle at 0 0, rgba(201, 150, 44, 0.11), transparent 24%),
+        radial-gradient(circle at 100% 0, rgba(201, 150, 44, 0.1), transparent 24%),
+        linear-gradient(180deg, var(--white), var(--bg-soft));
+    }
+
+    .services::before,
+    .services::after {
+      content: "";
+      position: absolute;
+      width: 420px;
+      height: 160px;
+      border: 1px solid rgba(201, 150, 44, 0.18);
+      border-radius: 50%;
+      pointer-events: none;
+    }
+
+    .services::before {
+      left: -130px;
+      top: 24px;
+      transform: rotate(-16deg);
+    }
+
+    .services::after {
+      right: -120px;
+      top: 28px;
+      transform: rotate(15deg);
+    }
+
+    .services .container {
+      position: relative;
+      z-index: 1;
+    }
+
+    .services .card {
+      overflow: hidden;
+      padding: 0;
+      background: rgba(255, 255, 255, 0.86);
+      box-shadow: 0 2px 16px rgba(58, 42, 30, 0.05);
+      transition: border-color 0.3s ease, transform 0.3s ease, box-shadow 0.3s ease;
+    }
+
+    .services .card:hover {
+      box-shadow: 0 14px 32px rgba(58, 42, 30, 0.08);
+    }
+
+    .service-image {
+      width: 100%;
+      height: 168px;
+      object-fit: cover;
+    }
+
+    .card-content {
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      padding: 0 28px 26px;
+      text-align: center;
+    }
+
+    .services .card-icon {
+      width: 56px;
+      height: 56px;
+      margin: -28px auto 18px;
+      background: rgba(255, 255, 255, 0.96);
+      box-shadow: 0 8px 18px rgba(58, 42, 30, 0.08);
+    }
+
+    .services .card p {
+      min-height: 68px;
+      margin-bottom: 18px;
+      line-height: 1.55;
+    }
+
+    .accordion-toggle {
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      gap: 10px;
+      min-height: 42px;
+      padding: 11px 22px;
+      border: 0;
+      border-radius: 8px;
+      background: var(--gold);
+      color: var(--white);
+      font-family: var(--font-body);
+      font-size: 13px;
+      font-weight: 700;
+      cursor: pointer;
+      transition: background 0.3s ease, transform 0.2s ease;
+    }
+
+    .accordion-toggle:hover {
+      background: var(--gold-dark);
+      transform: translateY(-1px);
+    }
+
+    .accordion-toggle svg {
+      transition: transform 0.3s ease;
+    }
+
+    .services .card.open .accordion-toggle svg {
+      transform: rotate(180deg);
+    }
+
+    .procedure-panel {
+      display: grid;
+      grid-template-rows: 0fr;
+      border-top: 1px solid rgba(201, 150, 44, 0.14);
+      background: rgba(255, 252, 247, 0.9);
+      transition: grid-template-rows 0.35s ease;
+    }
+
+    .services .card.open .procedure-panel {
+      grid-template-rows: 1fr;
+    }
+
+    .procedure-panel-inner {
+      overflow: hidden;
+    }
+
+    .services .procedure-list {
+      padding: 16px 22px 20px;
+      text-align: left;
+    }
+
+    .services-cta {
+      display: grid;
+      align-items: center;
+      gap: 18px;
+      margin-top: 34px;
+      background: rgba(255, 255, 255, 0.82);
+      padding: 28px 24px;
+      text-align: left;
+    }
+
+    .services-cta p {
+      max-width: none;
+      margin: 0;
+    }
+
     .contact-copy p {
       margin-bottom: 26px;
       color: var(--brown-muted);
@@ -833,6 +977,10 @@
       .hero-highlights span:last-child {
         border-right: 0;
         padding-right: 0;
+      }
+
+      .services-cta {
+        grid-template-columns: minmax(0, 1fr) auto;
       }
 
       .about-grid,
@@ -1061,70 +1209,104 @@
     <section class="services" id="atendimentos">
       <div class="container">
         <div class="section-heading center reveal">
-          <span class="section-label">Atendimentos</span>
-          <h2>Conheça nossos<br><em>procedimentos</em></h2>
-          <p class="section-desc">Conheça os principais procedimentos disponíveis na Amanda Viana Estética Facial e Corporal. Os atendimentos são organizados por área para facilitar sua escolha e direcionar o melhor protocolo para você.</p>
+          <span class="section-label">Nossos Atendimentos</span>
+          <h2>Tratamentos personalizados para<br><em>realçar sua beleza e bem-estar</em></h2>
+          <p class="section-desc">Protocolos exclusivos e cuidados personalizados para você se sentir bem, com segurança, qualidade e resultados naturais.</p>
         </div>
 
         <div class="services-grid">
           <article class="card reveal">
-            <span class="card-icon"><svg width="30" height="30" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.4"><path d="M8 15c1.3 1.3 2.7 2 4 2s2.7-.7 4-2"/><path d="M8.5 10.5h.01"/><path d="M15.5 10.5h.01"/><path d="M5 11c0-4.4 3.1-8 7-8s7 3.6 7 8c0 5.4-3.1 10-7 10s-7-4.6-7-10Z"/><path d="M6.4 6.6c2.8.5 5.7-.2 8.7-2"/></svg></span>
-            <h3>Facial</h3>
-            <p>Protocolos para cuidado, renovação, limpeza e revitalização da pele.</p>
-            <ul class="procedure-list">
-              <li>Limpeza de pele completa</li>
-              <li>Revitalização facial</li>
-              <li>Limpeza de pele com LED terapia</li>
-              <li>Limpeza de pele com peeling químico</li>
-              <li>Limpeza de pele com extração de milium</li>
-              <li>Limpeza de pele para adolescentes</li>
-              <li>Limpeza de pele nas costas</li>
-              <li>Microagulhamento</li>
-              <li>Fotobiomodulação</li>
-            </ul>
+            <img class="service-image" src="procedimento-facial.png" alt="Procedimento facial em cliente">
+            <div class="card-content">
+              <span class="card-icon"><svg width="30" height="30" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.4"><path d="M8 15c1.3 1.3 2.7 2 4 2s2.7-.7 4-2"/><path d="M8.5 10.5h.01"/><path d="M15.5 10.5h.01"/><path d="M5 11c0-4.4 3.1-8 7-8s7 3.6 7 8c0 5.4-3.1 10-7 10s-7-4.6-7-10Z"/><path d="M6.4 6.6c2.8.5 5.7-.2 8.7-2"/></svg></span>
+              <h3>Facial</h3>
+              <p>Protocolos para cuidado, renovação, limpeza e revitalização da pele do rosto e do corpo.</p>
+              <button class="accordion-toggle" type="button" aria-expanded="false">
+                Ver procedimentos
+                <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="m6 9 6 6 6-6"/></svg>
+              </button>
+            </div>
+            <div class="procedure-panel" aria-hidden="true">
+              <div class="procedure-panel-inner">
+                <ul class="procedure-list">
+                  <li>Limpeza de pele completa</li>
+                  <li>Revitalização facial</li>
+                  <li>Limpeza de pele com LED terapia</li>
+                  <li>Limpeza de pele com peeling químico</li>
+                  <li>Limpeza de pele com extração de milium</li>
+                  <li>Limpeza de pele para adolescentes</li>
+                  <li>Limpeza de pele nas costas</li>
+                  <li>Microagulhamento</li>
+                  <li>Fotobiomodulação</li>
+                </ul>
+              </div>
+            </div>
           </article>
 
           <article class="card reveal">
-            <span class="card-icon"><svg width="30" height="30" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.4"><path d="M12 3c1.4 0 2.5 1.1 2.5 2.5S13.4 8 12 8 9.5 6.9 9.5 5.5 10.6 3 12 3Z"/><path d="M8.5 21c.5-2.4.8-4.7.9-7.1L6.5 12c-.7-.5-.9-1.4-.4-2.1.4-.6 1.2-.8 1.8-.5L12 11l4.1-1.6c.7-.3 1.5-.1 1.8.5.5.7.3 1.6-.4 2.1l-2.9 1.9c.1 2.4.4 4.7.9 7.1"/><path d="M10 13.5h4"/></svg></span>
-            <h3>Corporal</h3>
-            <p>Tratamentos voltados para contorno, firmeza, celulite, gordura localizada e bem-estar corporal.</p>
-            <ul class="procedure-list">
-              <li>Tratamento para glúteos</li>
-              <li>Tratamento para celulite</li>
-              <li>Tratamento para redução de gordura</li>
-              <li>Tratamento para lipedema</li>
-              <li>Massagem modeladora com corrente russa</li>
-              <li>Pump up com corrente russa</li>
-              <li>Massagem modeladora com pump up</li>
-              <li>Pernas e glúteos</li>
-            </ul>
+            <img class="service-image" src="procedimento-corporal.png" alt="Procedimento corporal estético">
+            <div class="card-content">
+              <span class="card-icon"><svg width="30" height="30" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.4"><path d="M12 3c1.4 0 2.5 1.1 2.5 2.5S13.4 8 12 8 9.5 6.9 9.5 5.5 10.6 3 12 3Z"/><path d="M8.5 21c.5-2.4.8-4.7.9-7.1L6.5 12c-.7-.5-.9-1.4-.4-2.1.4-.6 1.2-.8 1.8-.5L12 11l4.1-1.6c.7-.3 1.5-.1 1.8.5.5.7.3 1.6-.4 2.1l-2.9 1.9c.1 2.4.4 4.7.9 7.1"/><path d="M10 13.5h4"/></svg></span>
+              <h3>Corporal</h3>
+              <p>Tratamentos voltados para contorno, firmeza, celulite, gordura localizada e bem-estar corporal.</p>
+              <button class="accordion-toggle" type="button" aria-expanded="false">
+                Ver procedimentos
+                <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="m6 9 6 6 6-6"/></svg>
+              </button>
+            </div>
+            <div class="procedure-panel" aria-hidden="true">
+              <div class="procedure-panel-inner">
+                <ul class="procedure-list">
+                  <li>Tratamento para glúteos</li>
+                  <li>Tratamento para celulite</li>
+                  <li>Tratamento para redução de gordura</li>
+                  <li>Tratamento para lipedema</li>
+                  <li>Massagem modeladora com corrente russa</li>
+                  <li>Pump up com corrente russa</li>
+                  <li>Massagem modeladora com pump up</li>
+                  <li>Pernas e glúteos</li>
+                </ul>
+              </div>
+            </div>
           </article>
 
           <article class="card reveal">
-            <span class="card-icon"><svg width="30" height="30" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.4"><path d="M12 3s6 6.1 6 11a6 6 0 0 1-12 0c0-4.9 6-11 6-11Z"/><path d="M9 15c1.8 1.4 4.2 1.4 6 0"/><path d="M7.5 6.5C5.6 7.1 4 8.4 3 10.2"/><path d="M16.5 6.5c1.9.6 3.5 1.9 4.5 3.7"/></svg></span>
-            <h3>Drenagens e Pós-operatório</h3>
-            <p>Atendimentos especializados para leveza, recuperação, retenção de líquidos e cuidados pós-procedimentos.</p>
-            <ul class="procedure-list">
-              <li>Drenagem linfática</li>
-              <li>Drenagem para gestantes</li>
-              <li>Drenagem linfática com massagem modeladora</li>
-              <li>Drenagem pós-operatório corporal</li>
-              <li>Drenagem pós-operatório facial</li>
-              <li>Drenagem pós-operatório</li>
-              <li>Dreno detox</li>
-              <li>Drenagem com endermo</li>
-            </ul>
+            <img class="service-image" src="procedimento-drenagens.png" alt="Procedimento de drenagem facial e corporal">
+            <div class="card-content">
+              <span class="card-icon"><svg width="30" height="30" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.4"><path d="M12 3s6 6.1 6 11a6 6 0 0 1-12 0c0-4.9 6-11 6-11Z"/><path d="M9 15c1.8 1.4 4.2 1.4 6 0"/><path d="M7.5 6.5C5.6 7.1 4 8.4 3 10.2"/><path d="M16.5 6.5c1.9.6 3.5 1.9 4.5 3.7"/></svg></span>
+              <h3>Drenagens e Pós-operatório</h3>
+              <p>Atendimentos especializados para leveza, recuperação, retenção de líquidos e cuidados pós-procedimentos.</p>
+              <button class="accordion-toggle" type="button" aria-expanded="false">
+                Ver procedimentos
+                <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="m6 9 6 6 6-6"/></svg>
+              </button>
+            </div>
+            <div class="procedure-panel" aria-hidden="true">
+              <div class="procedure-panel-inner">
+                <ul class="procedure-list">
+                  <li>Drenagem linfática</li>
+                  <li>Drenagem para gestantes</li>
+                  <li>Drenagem linfática com massagem modeladora</li>
+                  <li>Drenagem pós-operatório corporal</li>
+                  <li>Drenagem pós-operatório facial</li>
+                  <li>Drenagem pós-operatório</li>
+                  <li>Dreno detox</li>
+                  <li>Drenagem com endermo</li>
+                </ul>
+              </div>
+            </div>
           </article>
         </div>
 
         <div class="services-cta reveal">
-          <h3>Não sabe qual procedimento escolher?</h3>
-          <p>Fale com Amanda Viana pelo WhatsApp e receba uma orientação sobre o melhor atendimento para o seu objetivo.</p>
-          <a href="https://wa.me/5521964222780?text=Ol%C3%A1%2C%20Amanda%21%20Vim%20pelo%20site%20e%20gostaria%20de%20agendar%20um%20atendimento." class="btn-primary">Agendar pelo WhatsApp</a>
+          <div>
+            <h3>Pronta para cuidar de você?</h3>
+            <p>Agende seu horário e descubra o melhor protocolo para o seu objetivo.</p>
+          </div>
+          <a href="https://wa.me/5521964222780?text=Ol%C3%A1%2C%20Amanda%21%20Vim%20pelo%20site%20e%20gostaria%20de%20agendar%20um%20atendimento." class="btn-primary">Agendar via WhatsApp</a>
         </div>
       </div>
     </section>
-
     <section class="contact" id="contato">
       <div class="container contact-grid">
         <div class="contact-copy reveal">
@@ -1240,6 +1422,17 @@
 
     sections.forEach((section) => activeObserver.observe(section));
 
+    document.querySelectorAll(".accordion-toggle").forEach((button) => {
+      button.addEventListener("click", () => {
+        const card = button.closest(".card");
+        const panel = card.querySelector(".procedure-panel");
+        const isOpen = card.classList.toggle("open");
+
+        button.setAttribute("aria-expanded", String(isOpen));
+        panel.setAttribute("aria-hidden", String(!isOpen));
+      });
+    });
+
     if (window.matchMedia("(prefers-reduced-motion: reduce)").matches) {
       revealItems.forEach((item) => item.classList.add("visible"));
     } else {
@@ -1257,3 +1450,4 @@
   </script>
 </body>
 </html>
+
